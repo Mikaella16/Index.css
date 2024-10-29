@@ -1,0 +1,96 @@
+:root { 
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura da página */
+    overflow: hidden; /* Impede que elementos excedam os limites da página */
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.ibb.co/1dTLF6d/Imagem-de-fundo-novo.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.logo-topo {
+    position: fixed; /* Fixa a logo no topo da página */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    height: 279px; /* Altura da logo */
+    background: url('https://i.ibb.co/p0JRPCc/Pens-o-Efat-Logo-Black.png') no-repeat center; /* Caminho da logo */
+    background-size: contain; /* Ajusta a logo para caber na div */
+    z-index: 10; /* Garante que a logo esteja acima de outros elementos */
+}
+
+.inicio {
+    position: relative; /* Mantido para o posicionamento */
+    z-index: 1; /* Para garantir que o conteúdo apareça acima da imagem de fundo */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    height: calc(100vh - 279px - 50px); /* Altura total menos altura da logo e do endereço */
+    padding-top: 279px; /* Espaço entre a logo e as mensagens (ajuste conforme necessário) */
+    text-align: center; /* Centraliza o texto */
+}
+
+.boas-vindas {
+    font-size: 5vw; /* Tamanho responsivo para os textos */
+    margin: 10px 0; /* Espaçamento vertical entre os elementos */
+}
+.realizar-pedido {
+    font-size: 5vw; /* Tamanho responsivo para os textos */
+    margin: 10px 0; /* Espaçamento vertical entre os elementos */
+}
+.boa-refeicao {
+    font-size: 3vw; /* Tamanho responsivo para os textos */
+    margin: 10px 0; /* Espaçamento vertical entre os elementos */
+}
+
+/* Estilo para o texto com contorno preto e cor dourada */
+.dourado {
+    color: #f4b30f; /* Cor dourada */
+    text-shadow: 2px 2px 0 #000000, /* Contorno preto */
+                 -2px -2px 0 #000000,
+                 2px -2px 0 #000000,
+                 -2px 2px 0 #000000;
+}
+
+.endereco {
+    font-size: 2.5vw; /* Define o tamanho da fonte para o endereço */
+    width: 100%; /* O endereço ocupará toda a largura */
+    text-align: center; /* Centraliza o texto do endereço */
+    position: fixed; /* Fixa o endereço na parte inferior */
+    bottom: 0; /* Posiciona na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    padding: 10px 0; /* Espaçamento em cima e embaixo do endereço */
+    z-index: 1; /* Coloca o endereço abaixo da logo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .boas-vindas,
+    .realizar-pedido,
+    .boa-refeicao {
+        font-size: 6vw; /* Aumenta o tamanho da fonte em telas menores */
+    }
+
+    .endereco {
+        font-size: 5vw; /* Aumenta o tamanho da fonte do endereço em telas menores */
+    }
+}
